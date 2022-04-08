@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import "./App.css";
 
 function App() {
+  const [userName, setUserName] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearchClick = () => navigate(`user/${userName}`);
+  function handleUserNameChange(event) {
+    const {value} = event.target;
+    setUserName(value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="body">
+      <label htmlFor="search-bar">Github-Username: </label>
+      <input
+        type="text"
+        id="search-bar"
+        className="search-bar"
+        placeholder="typeUserName"
+        value={userName}
+        onChange={handleUserNameChange}
+      ></input>
+      <button className="search-button" onClick={handleSearchClick}>
+        &#128269;
+      </button>
     </div>
   );
 }
