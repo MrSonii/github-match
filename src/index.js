@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import DetailPage from "./components/DetailPage/DetailAndComparison";
+import DetailPage from "./screens/DetailAndComparison";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>

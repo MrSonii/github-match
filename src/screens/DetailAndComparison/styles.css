@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+.main {
+  height: 100vh;
+  color: white;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.display-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.detail-element {
+  border: 1px dashed lightblue;
+  margin: 0 15px;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.detail-element p {
+  flex: 0 0 100%;
+  text-align: center;
+}

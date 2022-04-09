@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./App.css";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -9,24 +10,17 @@ function App() {
 
   const handleSearchClick = () => navigate(`user/${userName}`);
   function handleUserNameChange(event) {
-    const {value} = event.target;
+    const { value } = event.target;
     setUserName(value);
   }
 
   return (
-    <div className="body">
-      <label htmlFor="search-bar">Github-Username: </label>
-      <input
-        type="text"
-        id="search-bar"
-        className="search-bar"
-        placeholder="typeUserName"
-        value={userName}
-        onChange={handleUserNameChange}
-      ></input>
-      <button className="search-button" onClick={handleSearchClick}>
-        &#128269;
-      </button>
+    <div>
+      <SearchBar
+        onValueChange={handleUserNameChange}
+        userName={userName}
+        onSearchClick={handleSearchClick}
+      />
     </div>
   );
 }

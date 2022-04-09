@@ -2,7 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { get } from "axios";
 import { useEffect, useState } from "react";
 
-import "./DetailAndComparison.css";
+import UserDetail from "../../components/UserDetails/UserDetail";
+import "./styles.css";
 
 export default function DetailPage() {
   const [apiData, setApiData] = useState();
@@ -14,18 +15,25 @@ export default function DetailPage() {
     (async () => {
       try {
         const response = await get(`https://api.github.com/users/${params.id}`);
-        setApiData(response);
+        const { data } = response;
+        console.log(data);
+        setApiData(data);
       } catch (err) {
         navigate(-1);
         alert("Invalid-UserName");
       }
     })();
   }, []);
-  //bio, followers, following,
+
+  if (apiData === undefined) {
+    return <h1 className="main display-center">Loading...</h1>;
+  }
+
   return (
-    <div className="body">
-      <h1>Detail-Page</h1>
-      <div className="detail-element"></div>
+    <div className="main">
+      <h1 className="t-center">Detail-Page</h1>
+      <UserDetail apiData={apiData} />
+      <button>Compare Profile with another Github User</button>
     </div>
   );
 }
