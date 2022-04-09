@@ -15,6 +15,10 @@
   flex-wrap: wrap;
 }
 
+.z-index {
+  z-index: 1;
+}
+
 .display-center {
   display: flex;
   justify-content: center;
@@ -25,10 +29,13 @@
   text-align: center;
 }
 
+.display-hide {
+  display: none;
+}
+
 .detail-element {
   border: 1px dashed lightblue;
-  margin: 0 15px;
-  height: 70%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,4 +45,16 @@
 .detail-element p {
   flex: 0 0 100%;
   text-align: center;
+}
+
+.all-details {
+  height: 70%;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-50 {
+  width: 50%;
 }

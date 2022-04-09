@@ -1,4 +1,4 @@
-export default function UserDetail({ apiData }) {
+export default function UserDetail({ apiData, split }) {
   const detailItems = [
     "name",
     "bio",
@@ -20,7 +20,7 @@ export default function UserDetail({ apiData }) {
   ];
 
   return (
-    <div className="detail-element">
+    <div className={`detail-element ${split}`}>
       {detailItems.map((item, ind) => (
         <p key={item}>{`${texts[ind]}: ${apiData[item]}`}</p>
       ))}

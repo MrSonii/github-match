@@ -9,6 +9,7 @@ function App() {
   const navigate = useNavigate();
 
   const handleSearchClick = () => navigate(`user/${userName}`);
+
   function handleUserNameChange(event) {
     const { value } = event.target;
     setUserName(value);
@@ -18,7 +19,6 @@ function App() {
     <div>
       <SearchBar
         onValueChange={handleUserNameChange}
-        userName={userName}
         onSearchClick={handleSearchClick}
       />
     </div>

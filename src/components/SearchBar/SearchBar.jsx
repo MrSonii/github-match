@@ -1,13 +1,12 @@
-export default function SearchBar({ userName, onValueChange, onSearchClick }) {
+export default function SearchBar({ onValueChange, onSearchClick, split }) {
   return (
-    <div className="body">
+    <div className={`body ${split}`}>
       <label htmlFor="search-bar">Github-Username: </label>
       <input
         type="text"
         id="search-bar"
         className="search-bar"
         placeholder="typeUserName"
-        value={userName}
         onChange={onValueChange}
       ></input>
       <button className="search-button" onClick={onSearchClick}>
