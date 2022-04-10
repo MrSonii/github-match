@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "./App.css";
-import SearchBar from "./components/SearchBar/SearchBar";
+import "./styles.css";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 function App() {
   const [userName, setUserName] = useState("");

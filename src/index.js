@@ -3,9 +3,9 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./index.css";
-import App from "./App";
+import App from "./screens/Home/index.jsx";
 import reportWebVitals from "./reportWebVitals";
-import DetailPage from "./screens/DetailAndComparison";
+import DetailPage from "./screens/DetailAndComparison/index.jsx";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
